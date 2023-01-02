@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use("/", express.static("public"));
 app.use("/api", require("./Routs/mainRouter"));
-app.use("*", express.static("public"));
+app.use("/*", express.static("public"));
 // app.get("/*", (req,res)=>{
 // res.status(404).sendFile(process.)
 // })
