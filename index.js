@@ -10,5 +10,6 @@ app.use(express.json());
 
 app.use("/", express.static("public"));
 app.use("/api", require("./Routs/mainRouter"));
+app.get("*", express.static("public"));
 
 app.listen(PORT, () => console.log("SERVER : connection success!"));
