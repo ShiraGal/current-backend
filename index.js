@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 require("./DL/db").myConnect();
-const path = require('node:path');
+// const path = require('path');
 const express = require("express"),
   app = express(),
   PORT = process.env.PORT || 3800;
@@ -13,7 +13,7 @@ app.use("/", express.static("public"));
 app.use("/api", require("./Routs/mainRouter"));
 // app.use("/*", express.static("public"));
 app.get("/*", (req,res)=>{
-res.status(404).sendFile(path.dirname() + "/public/index.html")
+res.status(404).sendFile("./public/index.html")
 })
 
 app.listen(PORT, () => console.log("SERVER : connection success!"));
