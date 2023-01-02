@@ -10,9 +10,9 @@ app.use(express.json());
 
 app.use("/", express.static("public"));
 app.use("/api", require("./Routs/mainRouter"));
-app.use("/*", express.static("public"));
-// app.get("/*", (req,res)=>{
-// res.status(404).sendFile(process.)
-// })
+// app.use("/*", express.static("public"));
+app.get("/*", (req,res)=>{
+res.status(404).sendFile("./public/index.html")
+})
 
 app.listen(PORT, () => console.log("SERVER : connection success!"));
